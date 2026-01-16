@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>adnew</title>
+    <meta name="description" content="Simple single-file webpage with 'adnew' title and a sample ad area." />
+    <style>
+        /* Simple, modern styling (single-file) */
+        :root {
+            --bg: #0f1724;
+            --card: #0b1220;
+            --muted: #9aa4b2;
+            --accent: #06b6d4;
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+            margin: 0;
+            background: linear-gradient(180deg, #071029 0%, #071827 100%);
+            color: #e6eef6;
+            -webkit-font-smoothing: antialiased
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 24px;
+            background: transparent
+        }
+
+        .brand {
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
+
+        .logo {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent), #7c3aed);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #021022
+        }
+
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            margin-left: 16px;
+            font-size: 14px
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 28px auto;
+            padding: 24px
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 20px;
+            align-items: start
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.03)
+        }
+
+        h1 {
+            font-size: 28px;
+            margin: 0 0 8px
+        }
+
+        p.lead {
+            color: var(--muted);
+            margin: 0 0 14px
+        }
+
+        .cta {
+            display: inline-block;
+            padding: 10px 14px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--accent), #7c3aed);
+            color: #021022;
+            font-weight: 600;
+            text-decoration: none
+        }
+
+        /* Ad area */
+        .ad-box {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+            border-radius: 10px;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed rgba(255, 255, 255, 0.04)
+        }
+
+        .ad-label {
+            font-size: 12px;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 1px
+        }
+
+        .ad-frame {
+            width: 100%;
+            height: 250px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #042b34, #07314a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #a9f4ff
+        }
+
+        /* Responsive */
+        @media (max-width:900px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .ad-frame {
+                height: 180px
+            }
+        }
+
+        footer {
+            max-width: 1100px;
+            margin: 22px auto 60px;
+            color: var(--muted);
+            font-size: 13px;
+            padding: 0 24px
+        }
+
+        .controls {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap
+        }
+
+        .input {
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 10px;
+            border-radius: 8px;
+            color: inherit
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="brand">
+            <div class="logo">Ad</div>
+            <div>
+                <div style="font-weight:700">adnew</div>
+                <div style="font-size:12px;color:var(--muted)">Innovative AD</div>
+            </div>
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#features">Features</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero">
+            <section class="card">
+                <h1>Welcome to <span style="color:var(--accent)">adnew</span></h1>
+                <p class="lead">welcome to adnew,this website gives you a best ads for your products.</p>
+
+                <div style="display:flex;gap:12px;align-items:center;margin-top:8px">
+                    <a class="cta" href="#">Get started</a>
+                    <div style="color:var(--muted)">or <a href="#features" style="color:inherit;text-decoration:underline">see features</a></div>
+                </div>
+
+                <hr style="margin:18px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)">
+
+                <h3 id="features">Features</h3>
+                <ul style="color:var(--muted);margin:8px 0 0 18px">
+                    <li>Minimal JavaScript, clean code, and optimized performance for instant page loads</li>
+                    <li>Replace the sample ad frame with your actual banners, iframes, or tracking scripts to test real ad placements</li>
+                    <li>Update ad headlines, creatives, and styles in real time to see how your campaigns might look before going live.</li>
+                </ul>
+
+                <div style="margin-top:14px" class="controls">
+                    <input id="adText" class="input" placeholder="Type ad headline" />
+                    <button id="updateBtn" class="input" style="cursor:pointer">Update Ad</button>
+                </div>
+            </section>
+
+            <aside class="card ad-box">
+                <div class="ad-label">Sponsored</div>
+                <div class="ad-frame" id="adFrame">Your ad creative here</div>
+                <div style="width:100%;display:flex;gap:8px;justify-content:center;align-items:center">
+                    <button class="input" id="sample1">Sample A</button>
+                    <button class="input" id="sample2">Sample B</button>
+                </div>
+            </aside>
+        </div>
+
+        <section style="margin-top:18px" class="card">
+            <h3>About</h3>
+            <p style="color:var(--muted)">adnew is a lightweight, modern web platform designed to simplify ad creative testing, landing page experiments, and digital campaign previews. Built with a focus on speed, clarity, and adaptability, adnew lets creators, marketers, and developers instantly prototype ad layout .</p>
+        </section>
+    </main>
+
+    <footer>
+        <div>Made with ❤️ — adnew • <span id="buildTime"></span></div>
+    </footer>
+
+    <script>
+        // small JS to make the demo interactive
+        const adFrame = document.getElementById('adFrame');
+        const adText = document.getElementById('adText');
+        const updateBtn = document.getElementById('updateBtn');
+        const sample1 = document.getElementById('sample1');
+        const sample2 = document.getElementById('sample2');
+        const buildTime = document.getElementById('buildTime');
+
+        updateBtn.addEventListener('click', () => {
+            const v = adText.value.trim();
+            adFrame.textContent = v || 'Your ad creative here';
+        });
+
+        sample1.addEventListener('click', () => {
+            adFrame.innerHTML = '<div style="text-align:center"><div style="font-size:20px;font-weight:700">Launch Sale</div><div style="margin-top:8px;color:rgba(255,255,255,0.8)">Up to 50% off — Limited time</div></div>';
+        });
+
+        sample2.addEventListener('click', () => {
+            adFrame.innerHTML = '<div style="text-align:center"><div style="font-size:20px;font-weight:700">Try Premium</div><div style="margin-top:8px;color:rgba(255,255,255,0.8)">7-day free trial</div></div>';
+        });
+
+        // Insert build time
+        buildTime.textContent = new Date().toLocaleString();
+    </script>
+</body>
+
+</html>
+  <section id="contact" class="card" style="margin-top:18px;background:var(--glass);backdrop-filter:blur(10px);">
+  <h3>Contact and support</h3>
+  <p style="color:var(--muted)">We’d love to hear from you! Reach out to the <span style="color:var(--accent)">adnew</span> team using the details below.</p>
+  
+  <div style="display:flex;flex-direction:column;gap:10px;margin-top:14px;color:var(--muted)">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <span>📧</span> 
+      <a href="mailto:contact@adnew.com" style="color:var(--accent);text-decoration:none;">vmd72710@gmail.com</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <span>📞</span> 
+      <a href="tel:+11234567890" style="color:var(--accent);text-decoration:none;">+91 63052 00896</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <span>🌐</span> 
+      <a href="https://www.adnew.com" style="color:var(--accent);text-decoration:none;">www.adnew.com</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <span>💼</span> 
+      <a href="https://linkedin.com/company/adnew" style="color:var(--accent);text-decoration:none;">linkedin.com/company/adnew</a>
+    </div>
+  </div>
+</section>

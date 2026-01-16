@@ -1,0 +1,64 @@
+/* 1. GLOBAL AD CONTAINER STYLING */
+.ad-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 25px auto;
+    background-color: #fcfcfc; /* Subtle contrast from page */
+    overflow: hidden;
+    clear: both;
+}
+
+/* 2. PREVENT LAYOUT SHIFT (CLS) */
+/* Reserve space based on standard ad sizes to stop content jumping */
+.ad-top-leaderboard {
+    min-height: 90px;
+    width: 100%;
+    max-width: 728px;
+}
+
+.ad-rectangle-inline {
+    min-height: 250px;
+    width: 300px;
+}
+
+/* 3. AD LABELING (Policy Compliance) */
+.ad-wrapper::before {
+    content: "ADVERTISEMENT";
+    display: block;
+    font-family: sans-serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #bbb;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+/* 4. STICKY SIDEBAR LOGIC */
+/* Keeps the ad visible as the user scrolls down the article */
+.ad-sticky-sidebar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 20px; /* Adjust based on your header height */
+    z-index: 10;
+}
+
+/* 5. RESPONSIVE CONTROLS */
+/* Hide certain large containers on mobile to keep UX clean */
+@media (max-width: 600px) {
+    .ad-top-leaderboard {
+        min-height: 50px; /* Switch to mobile banner height */
+        max-width: 320px;
+    }
+    
+    .ad-sticky-sidebar {
+        position: static; /* Disable sticky on small screens */
+    }
+}
+
+/* 6. Z-INDEX FIX (Keep Menus Above Ads) */
+header, .nav-menu {
+    position: relative;
+    z-index: 9999; 
+}
